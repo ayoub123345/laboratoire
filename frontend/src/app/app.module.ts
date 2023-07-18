@@ -12,6 +12,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AuthInterceptor } from './shared/auth.interceptor';
+import { BlankComponent } from './blank/blank.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AuthInterceptor } from './shared/auth.interceptor';
     SigninComponent,
     SignupComponent,
     UserProfileComponent,
+    BlankComponent,
   ],
   imports: [
     BrowserModule,

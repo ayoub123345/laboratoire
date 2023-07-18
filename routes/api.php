@@ -14,4 +14,10 @@ Route::group([
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::get('user-profile', 'AuthController@userProfile');
+
+});
+
+
+Route::group(['middleware' => ['auth_jwt', 'api']], function () {
+    Route::resource('patients', PatientController::class);
 });
