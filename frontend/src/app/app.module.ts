@@ -13,6 +13,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AuthInterceptor } from './shared/auth.interceptor';
 import { BlankComponent } from './blank/blank.component';
+ import { DataTablesModule } from "angular-datatables";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { BlankComponent } from './blank/blank.component';
     BlankComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,DataTablesModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
