@@ -35,6 +35,7 @@ export class BlankComponent implements OnInit {
 
   // Signout
   signOut() {
+    console.log('out')
     this.auth.setAuthState(false);
     this.token.removeToken();
     this.router.navigate(['login']);

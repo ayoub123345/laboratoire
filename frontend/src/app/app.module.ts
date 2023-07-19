@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { CommonModule } from '@angular/common';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AuthInterceptor } from './shared/auth.interceptor';
 import { BlankComponent } from './blank/blank.component';
+import {EmployeesModule} from "./employees/employees.module";
 
 @NgModule({
   declarations: [
@@ -24,10 +26,10 @@ import { BlankComponent } from './blank/blank.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule,CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule,EmployeesModule
   ],
   providers: [
     {

@@ -7,6 +7,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import {AppComponent} from "./app.component";
 import { BlankComponent } from './blank/blank.component';
 import {AddComponent} from "./patient/add/add.component";
+import {IndexComponent} from "./employees/index/index.component";
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
     children: [
         { path: 'profile', component: UserProfileComponent  },
         { path: 'patient/add', component: AddComponent },
+        { path: 'employees', component: IndexComponent },
 
 
      ]
