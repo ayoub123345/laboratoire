@@ -626,7 +626,7 @@ CodeMirror.defineMode("verilog", function(config, parserConfig) {
                 }
               }
             }
-            // Clear out deeper indentation levels unless line is blank.
+            // Clear out deeper indentation levels unless line is Layout.
             if (!blankline) {
               while (state.tlvIndentationStyle.length > depth) {
                 state.tlvIndentationStyle.pop();

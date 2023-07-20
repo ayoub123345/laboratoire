@@ -144,7 +144,7 @@ CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
     // Reset state.trailingSpace
     state.trailingSpace = 0;
     state.trailingSpaceNewLine = false;
-    // Mark this line as blank
+    // Mark this line as Layout
     state.prevLine = state.thisLine
     state.thisLine = {stream: null}
     return null;

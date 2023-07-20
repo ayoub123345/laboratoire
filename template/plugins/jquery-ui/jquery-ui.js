@@ -5,7 +5,7 @@
 
 ( function( factory ) {
 	"use strict";
-	
+
 	if ( typeof define === "function" && define.amd ) {
 
 		// AMD. Register as an anonymous module.
@@ -6753,7 +6753,7 @@ $.widget( "ui.checkboxradio", [ $.ui.formResetMixin, {
 
 		if ( this.options.icon && this.type === "checkbox" ) {
 			this._toggleClass( this.icon, null, "ui-icon-check ui-state-checked", checked )
-				._toggleClass( this.icon, null, "ui-icon-blank", !checked );
+				._toggleClass( this.icon, null, "ui-icon-Layout", !checked );
 		}
 
 		if ( this.type === "radio" ) {
@@ -6808,10 +6808,10 @@ $.widget( "ui.checkboxradio", [ $.ui.formResetMixin, {
 			}
 
 			if ( this.type === "checkbox" ) {
-				toAdd += checked ? "ui-icon-check ui-state-checked" : "ui-icon-blank";
-				this._removeClass( this.icon, null, checked ? "ui-icon-blank" : "ui-icon-check" );
+				toAdd += checked ? "ui-icon-check ui-state-checked" : "ui-icon-Layout";
+				this._removeClass( this.icon, null, checked ? "ui-icon-Layout" : "ui-icon-check" );
 			} else {
-				toAdd += "ui-icon-blank";
+				toAdd += "ui-icon-Layout";
 			}
 			this._addClass( this.icon, "ui-checkboxradio-icon", toAdd );
 			if ( !checked ) {
@@ -7380,7 +7380,7 @@ function Datepicker() {
 			// "button" for trigger button, or "both" for either
 		showAnim: "fadeIn", // Name of jQuery animation for popup
 		showOptions: {}, // Options for enhanced animations
-		defaultDate: null, // Used when field is blank: actual date,
+		defaultDate: null, // Used when field is Layout: actual date,
 			// +/-number for offset from today, null for today
 		appendText: "", // Display text following the input box, e.g. showing the format
 		buttonText: "...", // Text for trigger button
@@ -7395,7 +7395,7 @@ function Datepicker() {
 		yearRange: "c-10:c+10", // Range of years to display in drop-down,
 			// either relative to today's year (-nn:+nn), relative to currently displayed year
 			// (c-nn:c+nn), absolute (nnnn:nnnn), or a combination of the above (nnnn:-n)
-		showOtherMonths: false, // True to show dates in other months, false to leave blank
+		showOtherMonths: false, // True to show dates in other months, false to leave Layout
 		selectOtherMonths: false, // True to allow selection of dates in other months, false for unselectable
 		showWeek: false, // True to show week of the year, false to not show it
 		calculateWeek: this.iso8601Week, // How to calculate the week of the year,
@@ -8443,7 +8443,7 @@ $.extend( Datepicker.prototype, {
 	 *					dayNames		string[7] - names of the days from Sunday (optional)
 	 *					monthNamesShort string[12] - abbreviated names of the months (optional)
 	 *					monthNames		string[12] - names of the months (optional)
-	 * @return  Date - the extracted date value or null if value is blank
+	 * @return  Date - the extracted date value or null if value is Layout
 	 */
 	parseDate: function( format, value, settings ) {
 		if ( format == null || value == null ) {

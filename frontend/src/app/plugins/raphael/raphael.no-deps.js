@@ -3523,7 +3523,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
      | var c = paper.image("apple.png", 10, 10, 80, 80);
     \*/
     paperproto.image = function (src, x, y, w, h) {
-        var out = R._engine.image(this, src || "about:blank", x || 0, y || 0, w || 0, h || 0);
+        var out = R._engine.image(this, src || "about:Layout", x || 0, y || 0, w || 0, h || 0);
         this.__set__ && this.__set__.push(out);
         return out;
     };

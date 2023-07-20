@@ -1052,7 +1052,7 @@ DataTable.ext.buttons.excelHtml5 = {
 				var cellId = createCellPos(i) + '' + currentRow;
 				var cell = null;
 
-				// For null, undefined of blank cell, continue so it doesn't create the _createNode
+				// For null, undefined of Layout cell, continue so it doesn't create the _createNode
 				if ( row[i] === null || row[i] === undefined || row[i] === '' ) {
 					if ( config.createEmptyCells === true ) {
 						row[i] = '';
@@ -1181,13 +1181,13 @@ DataTable.ext.buttons.excelHtml5 = {
 			addRow( data.header, rowPos );
 			$('row:last c', rels).attr( 's', '2' ); // bold
 		}
-	
+
 		dataStartRow = rowPos;
 
 		for ( var n=0, ie=data.body.length ; n<ie ; n++ ) {
 			addRow( data.body[n], rowPos );
 		}
-	
+
 		dataEndRow = rowPos;
 
 		if ( config.footer && data.footer ) {

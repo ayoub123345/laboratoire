@@ -20,10 +20,68 @@ export class ApiServiceService {
     return this.http.get<any>(this.apiUrl+'users', { headers });
   }
 
+  getPatients(){
+    const headers = this.createAuthorizationHeader();
+    return this.http.get<any>(this.apiUrl+'patients', { headers });
+  }
+
+  getPatient(id:any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.get<any>(this.apiUrl+'patients/'+id, { headers });
+  }
+  getPatientByCin(cin:any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.get<any>(this.apiUrl+'patients/cin/'+cin, { headers });
+  }
+
+
+  addPatient(patient : any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.post<any>(this.apiUrl+'patients',   patient , { headers });
+  }
+
+  editPatient(patient : any , id : any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.put<any>(this.apiUrl+'patients/'+id,   patient , { headers });
+  }
+
+
+  deletePatient( id : any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.delete<any>(this.apiUrl+'patients/'+id , { headers });
+  }
+
+
+
+  addAnalyses(patient : any , anlayses:any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.post<any>(this.apiUrl+'analyses',   {patient , anlayses } , { headers });
+  }
+  getAnalyses(){
+    const headers = this.createAuthorizationHeader();
+    return this.http.get<any>(this.apiUrl+'analyses', { headers });
+  }
+
+  getAnalyse(id:any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.get<any>(this.apiUrl+'analyses/'+id, { headers });
+  }
+
   private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.token}`
     });
   }
+  deleteAnalyses( id : any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.delete<any>(this.apiUrl+'analyses/'+id , { headers });
+  }
+  editAnalyses(patient : any ,anlayses : any , id : any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.put<any>(this.apiUrl+'analyses/'+id,   {patient , anlayses }  , { headers });
+  }
+
+
+
 }

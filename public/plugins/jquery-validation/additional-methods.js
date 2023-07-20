@@ -1331,7 +1331,7 @@ $.validator.addMethod( "require_from_group", function( value, element, options )
 
 /*
  * Lets you say "either at least X inputs that match selector Y must be filled,
- * OR they must all be skipped (left blank)."
+ * OR they must all be skipped (left Layout)."
  *
  * The end result, is that none of these inputs:
  *

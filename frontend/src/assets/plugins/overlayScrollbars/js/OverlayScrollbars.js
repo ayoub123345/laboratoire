@@ -2502,7 +2502,7 @@
                                         obj.type = 'text/html';
                                         if (isIE)
                                             targetElement.prepend(obj);
-                                        obj.data = 'about:blank';
+                                        obj.data = 'about:Layout';
                                         if (!isIE)
                                             targetElement.prepend(obj);
                                         targetElement.on(strAnimationStartEvent, callback);

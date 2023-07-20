@@ -5,6 +5,7 @@ import { IndexComponent } from './index/index.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {AppComponent} from "../app.component";
 import { BrowserModule } from '@angular/platform-browser';
+import { DataTablesModule } from "angular-datatables";
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { BrowserModule } from '@angular/platform-browser';
     IndexComponent
   ],
     imports: [
-        BrowserModule ,CommonModule , ReactiveFormsModule , FormsModule
+        BrowserModule ,CommonModule , ReactiveFormsModule , DataTablesModule , FormsModule
      ]
     ,
     bootstrap: [AppComponent]

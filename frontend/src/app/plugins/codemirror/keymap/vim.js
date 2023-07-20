@@ -4256,7 +4256,7 @@
 
     /**
      * Extract the regular expression from the query and return a Regexp object.
-     * Returns null if the query is blank.
+     * Returns null if the query is Layout.
      * If ignoreCase is passed in, the Regexp object will have the 'i' flag set.
      * If smartCase is passed in, and the query contains upper case letters,
      *   then ignoreCase is overridden, and the 'i' flag will not be set.

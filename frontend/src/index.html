@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html   lang="fr">
 <head>
   <meta charset="utf-8">
   <title>Frontend</title>
@@ -16,6 +16,23 @@
   <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Define the rotation animation */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Apply the rotation animation to the icon */
+        .rotating-icon {
+            animation: rotate 2s linear infinite; /* Adjust the duration and other animation properties as needed */
+        }
+    </style>
  </head>
 <body class=" ">
   <app-root></app-root>
@@ -25,44 +42,8 @@
   <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="/assets/dist/js/adminlte.min.js"></script>
-  <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-  <script src="assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="assets/plugins/jszip/jszip.min.js"></script>
-  <script src="assets/plugins/pdfmake/pdfmake.min.js"></script>
-  <script src="assets/plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-  <script src="assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-  <script>
-
-    function  initdatatable()
-    {
-        console.log('exemple')
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
-    }
-    function  refrech_data_table()
-    {
-        $('#example1').DataTable().draw();
-    }
 
 
-    function addDataToDataTable(newData) {
-        // Update the underlying data source of the DataTable
-        var dataTable = $('example1').DataTable();
-        var dataTableData = dataTable.rows().data().toArray();
-        dataTableData.push(newData);
-        dataTable.clear().rows.add(dataTableData).draw();
-    }
-
-  </script>
 
 </body>
 </html>

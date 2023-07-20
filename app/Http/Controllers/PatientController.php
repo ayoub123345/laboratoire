@@ -46,6 +46,12 @@ class PatientController extends Controller
         return response()->json($patient);
     }
 
+    public function getPatienByCin($cin)
+    {
+        $patient = Patient::where('cin',$cin)->firstOrFail();
+        return response()->json($patient);
+    }
+
     public function update(Request $request, Patient $patient)
     {
 

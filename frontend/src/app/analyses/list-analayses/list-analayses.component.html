@@ -1,0 +1,78 @@
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">liste des patients</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <div   class=" " style="padding: 6px">
+
+
+        <div class="row" style="margin-bottom: 5px">
+            <div class="col-2">
+                <button type="button" [routerLink]="'/analyses/add'"  class="btn btn-block btn-success  ">Ajouter un analyse
+                </button>
+
+            </div>
+            <div class="col-10"></div>
+
+
+        </div>
+        <div style="height: 15px">
+
+        </div>
+
+        <table [dtOptions]="dtOptions" *ngIf="data && data.length !== 0" datatable class="row-border hover table">
+            <thead>
+            <tr>
+                <th>CIN</th>
+                <th>name</th>
+                <th>analayse</th>
+                <th>date</th>
+                <th>price</th>
+                <th>status</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr *ngFor="let d of data">
+                <td>{{ d.patient.cin }}</td>
+                <td>{{ d.patient.firstname }} {{ d.patient.lastname }}</td>
+                <td>{{ d.name }} </td>
+                <td>{{ dateFormat( d.created_at , true) }} </td>
+                <td>{{ d.price }}DH </td>
+                     <td>
+
+                   <span [ngClass]="getStatusColorClass(d.status)">{{ d.status }}</span>
+
+                </td>
+                <td>
+                    <div class="btn-group mr-2" role="group" aria-label="Button group with spacing">
+
+
+
+                        <button class="btn btn-primary ml-1" (click)="edit( d.id)">
+                            <i class="fas fa-edit"></i>
+                        </button>
+
+
+                        <button class="btn btn-danger ml-1" (click)="delete( d.id)">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+
+                </td>
+
+            </tr>
+
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+</div>
+
