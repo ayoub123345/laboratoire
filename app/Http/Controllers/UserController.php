@@ -6,6 +6,7 @@ use App\Patient;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -14,20 +15,19 @@ class UserController extends Controller
 
     public function index()
     {
-        $patients = User::all();
-        return response()->json($patients);
+        $users = User::all();
+        return response()->json($users);
     }
 
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'cin' => 'required',
-            'firstname' => 'required',
-            'lastname' => 'required',
+            'name' => 'required',
             'birth_date' => 'required|date',
-            'adresse' => 'required',
             'sexe' => 'required',
             'phone' => 'required',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
         ]);
 
         if ($validator->fails()) {
@@ -39,41 +39,51 @@ class UserController extends Controller
             $data["birth_date"] = Carbon::parse($data['birth_date']);
         }
 
-        $patient = Patient::create($data);
+         $data["password"] = Hash::make($request->input('password'));
 
-        return response()->json($patient, 201);
+        $user = User::create($data);
+
+        return response()->json($user, 201);
     }
 
-    public function show(Patient $patient)
+    public function show(User $user)
     {
-        return response()->json($patient);
+        return response()->json($user);
     }
 
-    public function update(Request $request, Patient $patient)
+    public function update(Request $request, User $user)
     {
 
-        $validator = Validator::make($request->all(), [
-            'cin' => 'required',
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'birth_date' => 'required|date',
-            'adresse' => 'required',
-            'sexe' => 'required',
-            'phone' => 'required',
-        ]);
+            $validator = Validator::make($request->all(), [
+                'name' => 'required',
+                'birth_date' => 'required|date',
+                'sexe' => 'required',
+                'phone' => 'required',
+                'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
+                'password' => 'nullable|string|min:8|confirmed', // nullable means the field is optional
 
-        if ($validator->fails()) {
+            ]);
+
+
+            if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $patient->update($request->all());
+        $data = $request->all();
+        if($request->post("birth_date"))
+        {
+            $data["birth_date"] = Carbon::parse($data['birth_date']);
+        }
 
-        return response()->json($patient);
+        $data["password"] = Hash::make($request->input('password'));
+        $user->update($data);
+
+        return response()->json($user);
     }
 
-    public function destroy(Patient $patient)
+    public function destroy(User $user)
     {
-        $patient->delete();
+        $user->delete();
 
         return response()->json(null, 204);
     }
