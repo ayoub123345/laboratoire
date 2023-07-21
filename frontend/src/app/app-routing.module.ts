@@ -13,6 +13,8 @@ import {EditComponent} from "./patient/edit/edit.component";
 import {EditComponent as Editanalyses} from "./analyses/edit/edit.component";
 import {AddAnalyseComponent} from "./analyses/add-analyse/add-analyse.component";
 import {ListAnalaysesComponent} from "./analyses/list-analayses/list-analayses.component";
+import {AddComponent as addemp} from "./employees/add/add.component";
+import {EditComponent as editemp} from "./employees/edit/edit.component";
 
 
 const routes: Routes = [
@@ -27,12 +29,14 @@ const routes: Routes = [
     children: [
         { path: 'profile', component: UserProfileComponent  },
         { path: 'patient/add', component: AddComponent },
-        { path: 'employees', component: IndexComponent },
         { path: 'patient', component: ListpatientsComponent },
         { path: 'patient/:id', component: EditComponent },
         { path: 'analyses/add', component: AddAnalyseComponent },
         { path: 'analyses', component: ListAnalaysesComponent },
         { path: 'analyses/:id', component: Editanalyses },
+        { path: 'employees', component: IndexComponent },
+        { path: 'employees/add', component: addemp },
+        { path: 'employees/:id', component: editemp },
 
 
     ]

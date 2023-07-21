@@ -33,7 +33,6 @@ export class EditComponent implements OnInit {
     this.appservice.getPatient(id).subscribe(
         (response) => {
            this.isLoading = false; // Set is_loading to false when the loading is finished
-            this.toastr.success('success', 'your data was saved');
 
           console.log(response);
           this.patient = response;

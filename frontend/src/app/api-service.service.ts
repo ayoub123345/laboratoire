@@ -20,6 +20,28 @@ export class ApiServiceService {
     return this.http.get<any>(this.apiUrl+'users', { headers });
   }
 
+  getUser(id:any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.get<any>(this.apiUrl+'users/'+id, { headers });
+  }
+  addUser(patient : any){
+
+    const headers = this.createAuthorizationHeader();
+    return this.http.post<any>(this.apiUrl+'users',   patient , { headers });
+  }
+
+  editUser(patient : any , id : any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.put<any>(this.apiUrl+'users/'+id,   patient , { headers });
+  }
+
+  deleteUser( id : any){
+    const headers = this.createAuthorizationHeader();
+    return this.http.delete<any>(this.apiUrl+'users/'+id , { headers });
+  }
+
+
+
   getPatients(){
     const headers = this.createAuthorizationHeader();
     return this.http.get<any>(this.apiUrl+'patients', { headers });

@@ -9,15 +9,9 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent implements OnInit {
-
-
-
   isLoading : boolean = false;
   errors: any = {};
-  analyse: any = {
-    status : 'PENDING'
-  };
-  patient: any = {
+  emp: any = {
     cin: '',
     firstname: '',
     lastname: '',
@@ -26,21 +20,21 @@ export class EditComponent implements OnInit {
     phone: '',
     sexe:"MALE"};
 
-  constructor( private appservice : ApiServiceService , private toastr: ToastrService ,       public router: Router , private route: ActivatedRoute) { }
+  constructor( private appservice : ApiServiceService , private toastr: ToastrService ,     public router: Router , private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
     const id = this.route.snapshot.paramMap.get('id');
 
+
     this.isLoading = true; // Set is_loading to true before subscribing
     this.errors = {};
-    this.appservice.getAnalyse(id).subscribe(
+    this.appservice.getUser(id).subscribe(
         (response) => {
           this.isLoading = false; // Set is_loading to false when the loading is finished
 
           console.log(response);
-          this.patient = response.patient;
-          this.analyse = response;
+          this.emp = response;
         },
         (error) => {
           console.error('Error fetching data:', error);
@@ -53,6 +47,7 @@ export class EditComponent implements OnInit {
           console.log(this.errors)
         }
     );
+
 
   }
 
@@ -62,11 +57,11 @@ export class EditComponent implements OnInit {
 
     this.isLoading = true; // Set is_loading to true before subscribing
     this.errors = {};
-    this.appservice.editAnalyses(this.patient , this.analyse , this.analyse.id).subscribe(
+    this.appservice.editUser(this.emp,this.emp.id).subscribe(
         (response) => {
           this.toastr.success('success', 'your data was saved');
           this.isLoading = false; // Set is_loading to false when the loading is finished
-          this.router.navigate(['analyses']);
+          this.router.navigate(['employees']);
 
         },
         (error) => {
@@ -82,20 +77,5 @@ export class EditComponent implements OnInit {
     );
 
   }
-
-  onCinChange()
-  {
-    this.appservice.getPatientByCin(this.patient.cin).subscribe(
-        (response) => {
-          this.toastr.success('success', 'this patient exists');
-          this.patient = response;
-
-        },
-        (error) => {
-
-        }
-    );
-  }
-
 
 }
