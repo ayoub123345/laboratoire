@@ -460,7 +460,7 @@ var FullCalendar = (function (exports) {
         if (typeof formatter === 'function') {
             return formatter.apply(void 0, args);
         }
-        if (typeof formatter === 'string') { // non-blank string
+        if (typeof formatter === 'string') { // non-Layout string
             return args.reduce(function (str, arg, index) { return (str.replace('$' + index, arg || '')); }, formatter);
         }
         return fallbackText;

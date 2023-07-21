@@ -193,7 +193,7 @@ CodeMirror.defineMode("puppet", function () {
     }
     // Keep advancing through all the rest
     stream.eatWhile(/[\w-]/);
-    // Return a blank line for everything else
+    // Return a Layout line for everything else
     return null;
   }
   // Start it all

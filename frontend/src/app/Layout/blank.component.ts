@@ -5,7 +5,7 @@ import { AuthStateService } from '../shared/auth-state.service';
 import {AuthService} from "../shared/auth.service";
 import {User} from "../components/user-profile/user-profile.component";
 @Component({
-  selector: 'app-blank',
+  selector: 'app-Layout',
   templateUrl: './blank.component.html',
   styleUrls: ['./blank.component.scss']
 })
@@ -35,6 +35,7 @@ export class BlankComponent implements OnInit {
 
   // Signout
   signOut() {
+    console.log('out')
     this.auth.setAuthState(false);
     this.token.removeToken();
     this.router.navigate(['login']);

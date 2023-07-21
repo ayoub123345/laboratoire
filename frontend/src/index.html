@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html   lang="fr">
 <head>
   <meta charset="utf-8">
   <title>Frontend</title>
@@ -16,14 +16,34 @@
   <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Define the rotation animation */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Apply the rotation animation to the icon */
+        .rotating-icon {
+            animation: rotate 2s linear infinite; /* Adjust the duration and other animation properties as needed */
+        }
+    </style>
  </head>
 <body class=" ">
   <app-root></app-root>
   <!-- jQuery -->
-  <script src="/assets/plugins/jquery/jquery.min.js"></script>
+ <script src="/assets/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="/assets/dist/js/adminlte.min.js"></script>
+
+
+
 </body>
 </html>

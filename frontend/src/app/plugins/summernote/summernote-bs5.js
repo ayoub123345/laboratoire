@@ -976,7 +976,7 @@ function withClosestSiblings(node, pred) {
   return siblings;
 }
 /**
- * blank HTML for cursor position
+ * Layout HTML for cursor position
  * - [workaround] old IE only works with &nbsp;
  * - [workaround] IE11 and other browser works with bogus br
  */

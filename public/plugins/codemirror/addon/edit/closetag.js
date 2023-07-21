@@ -19,7 +19,7 @@
  *   An array of tag names that should not be autoclosed.
  * `indentTags` (default is block tags for HTML, none for XML)
  *   An array of tag names that should, when opened, cause a
- *   blank line to be added inside the tag, and the blank line and
+ *   Layout line to be added inside the tag, and the Layout line and
  *   closing line to be indented.
  * `emptyTags` (default is none)
  *   An array of XML tag names that should be autoclosed with '/>'.
