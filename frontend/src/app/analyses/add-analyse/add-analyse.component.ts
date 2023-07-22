@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiServiceService} from "../../api-service.service";
 import {ToastrService} from "ngx-toastr";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-analyse',
@@ -24,10 +24,17 @@ export class AddAnalyseComponent implements OnInit {
     phone: '',
     sexe:"MALE"};
 
-  constructor( private appservice : ApiServiceService , private toastr: ToastrService ,     public router: Router) { }
+  constructor( private appservice : ApiServiceService , private toastr: ToastrService , private route: ActivatedRoute ,     public router: Router) { }
 
   ngOnInit(): void {
 
+    this.route.queryParamMap.subscribe((params) => {
+       if (params.has('cin')) {
+         this.patient.cin = params.get('cin');
+        this.onCinChange();
+
+       }
+    });
 
   }
 

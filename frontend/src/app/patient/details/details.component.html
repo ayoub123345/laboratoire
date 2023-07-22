@@ -1,0 +1,103 @@
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Ajouter un patient</h3>
+    </div>
+    <div *ngIf="isLoading" class="overlay">
+        <i class="fas fa-2x fa-sync-alt rotating-icon"></i>
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-3">
+
+                <button type="button" (click)="downloadpdf()"  class="btn btn-block btn-danger  ">
+                    <i class="fas fa-file-pdf"></i> download pdf
+                </button>
+            </div>
+        </div>
+
+
+        <form>
+
+
+            <div class="card-body">
+                <a style="margin-bottom: 15px"   [routerLink]="'/patient'"   >Return to the list
+                </a> <div style="height: 10px"></div>
+
+
+                <div class="row">
+                    <div class="col-6 form-group">
+                        <label>CIN</label>
+                        <input disabled type="text" class="form-control" name="cin" placeholder="Enter CIN" [(ngModel)]="patient.cin" [ngClass]="{ 'is-invalid': errors?.cin }">
+
+                        <span  *ngIf="errors?.cin" class="error invalid-feedback">{{ errors.cin[0] }}</span>
+
+                    </div>
+                    <div class="col-6  form-group">
+                        <label>Prénom</label>
+                        <input disabled type="text" class="form-control" name="firstname" placeholder="Enter le prénom de patient" [(ngModel)]="patient.firstname" [ngClass]="{ 'is-invalid': errors?.firstname }">
+                        <span  *ngIf="errors?.firstname" class="error invalid-feedback">{{ errors.firstname[0] }}</span>
+
+                    </div>
+
+                    <div class=" col-6  form-group">
+                        <label>Nom</label>
+                        <input disabled type="text" class="form-control" name="lastname" placeholder="Enter le famille de patient" [(ngModel)]="patient.lastname" [ngClass]="{ 'is-invalid': errors?.lastname }">
+                        <span  *ngIf="errors?.lastname" class="error invalid-feedback">{{ errors.lastname[0] }}</span>
+
+                    </div>
+
+                    <div class=" col-6  form-group">
+                        <label>Date naissance</label>
+                        <input disabled type="date" class="form-control" name="birth_date" placeholder="Entre la date de patient"   [(ngModel)]="patient.birth_date" [ngClass]="{ 'is-invalid': errors?.birth_date }">
+                        <span  *ngIf="errors?.birth_date" class="error invalid-feedback">{{ errors.birth_date[0] }}</span>
+
+                    </div>
+
+                    <div class="col-6  form-group">
+                        <label>Adresse</label>
+                        <textarea disabled class="form-control" rows="3" name="adresse" placeholder="Enter ..." [(ngModel)]="patient.adresse" [ngClass]="{ 'is-invalid': errors?.adresse }"></textarea>
+                        <span  *ngIf="errors?.adresse" class="error invalid-feedback">{{ errors.adresse[0] }}</span>
+
+                    </div>
+
+                    <div class=" col-6  form-group">
+                        <label>Téléphone</label>
+                        <input disabled type="text" class="form-control" name="phone" placeholder="Phone" [(ngModel)]="patient.phone" [ngClass]="{ 'is-invalid': errors?.phone }">
+                        <span  *ngIf="errors?.phone" class="error invalid-feedback">{{ errors.phone[0] }}</span>
+
+                    </div>
+
+                    <h5> * Medical file </h5>
+
+                    <table class="table table-bordered">
+
+                        <thead class="bg-gradient-gray-dark">
+                        <th>name</th>
+                        <th>date</th>
+                        <th>price</th>
+
+                        </thead>
+
+                        <tbody>
+                        <tr *ngFor="let d of patient.analyses">
+
+                            <td>{{ d.name }} </td>
+                            <td>{{ dateFormat( d.created_at , true) }} </td>
+                            <td> <span class="badge badge-success">{{ d.price }}DH </span></td>
+
+
+                        </tr>
+
+                        </tbody>
+
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>

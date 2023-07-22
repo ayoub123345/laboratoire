@@ -15,6 +15,7 @@ import {AddAnalyseComponent} from "./analyses/add-analyse/add-analyse.component"
 import {ListAnalaysesComponent} from "./analyses/list-analayses/list-analayses.component";
 import {AddComponent as addemp} from "./employees/add/add.component";
 import {EditComponent as editemp} from "./employees/edit/edit.component";
+import {DetailsComponent} from "./patient/details/details.component";
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
         { path: 'patient/add', component: AddComponent },
         { path: 'patient', component: ListpatientsComponent },
         { path: 'patient/:id', component: EditComponent },
+        { path: 'patient/details/:id', component: DetailsComponent },
         { path: 'analyses/add', component: AddAnalyseComponent },
         { path: 'analyses', component: ListAnalaysesComponent },
         { path: 'analyses/:id', component: Editanalyses },

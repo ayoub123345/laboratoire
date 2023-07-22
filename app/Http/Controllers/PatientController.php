@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Patient;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use mPDF;
 
 class PatientController extends Controller
 {
@@ -41,15 +43,31 @@ class PatientController extends Controller
         return response()->json($patient, 201);
     }
 
-    public function show(Patient $patient)
+    public function show($id)
     {
-        return response()->json($patient);
+        $P  = Patient::with('analyses')->findOrFail($id);
+
+        return response()->json($P);
     }
 
     public function getPatienByCin($cin)
     {
         $patient = Patient::where('cin',$cin)->firstOrFail();
         return response()->json($patient);
+    }
+
+
+    public function downloadPdf($id)
+    {
+        $emp  = Patient::with('analyses')->findOrFail($id);
+        $lab = (object)[
+          "taxes_number"=>'21564',
+          "address"=>'wifak 2 rue 43 nr 17 oulfa casablanca',
+          "name"=>'name_lab',
+          "phone"=>'0619688778',
+        ];
+         $pdf =  mPDF::loadView('pdfs.patient_file',compact('emp','lab'));
+        return $pdf->download('invoice_#'.$emp->cin.'.pdf');
     }
 
     public function update(Request $request, Patient $patient)

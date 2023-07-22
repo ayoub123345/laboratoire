@@ -24,3 +24,5 @@ Route::group(['middleware' => ['auth_jwt', 'api']], function () {
     Route::resource('users', UserController::class);
     Route::resource('analyses', AnalysesController::class);
 });
+
+Route::get('patients/pdf/{id}', "PatientController@downloadPdf");

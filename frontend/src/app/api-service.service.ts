@@ -7,7 +7,7 @@ import { TokenService } from './shared/token.service';
   providedIn: 'root'
 })
 export class ApiServiceService {
-  private apiUrl = 'http://127.0.0.1:8000/api/';
+  public apiUrl = 'http://127.0.0.1:8000/api/';
   private token  ;
 
   constructor(private http: HttpClient , private  TmokenService : TokenService) {

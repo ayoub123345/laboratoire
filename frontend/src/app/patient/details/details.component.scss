@@ -1,0 +1,19 @@
+form {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  input[type="checkbox"],
+    /* Add other input types as needed */
+  textarea,
+  button {
+    /* Remove any existing styling */
+    appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    font: inherit;
+    /* Add any other styles to make it look like normal text */
+  }
+}

@@ -73,6 +73,21 @@ export class ListpatientsComponent implements OnInit {
 
     }
 
+    show(id : any):void
+    {
+        this.router.navigate(['/patient/details', id]);
+
+
+    }
+    addAnalyses(id : any):void
+    {
+        const queryParams = { cin: id }; // Replace 'asd' with the value you want to send as a parameter
+
+        this.router.navigate( ['analyses/add'],  { queryParams: queryParams });
+
+
+    }
+
     delete(id : any):void
     {
 
@@ -94,5 +109,11 @@ export class ListpatientsComponent implements OnInit {
 
     }
 
+
+    downloadpdf(id : any)
+    {
+        window.location.href = this.appservice.apiUrl+'patients/pdf/'+id;
+
+    }
     protected readonly formatDate = formatDate;
 }

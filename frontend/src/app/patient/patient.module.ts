@@ -8,6 +8,7 @@ import {AppComponent} from "../app.component";
 import { ListpatientsComponent } from './listpatients/listpatients.component';
 import {RouterModule} from "@angular/router";
 import { EditComponent } from './edit/edit.component';
+import { DetailsComponent } from './details/details.component';
 
 
 
@@ -15,7 +16,8 @@ import { EditComponent } from './edit/edit.component';
   declarations: [
     AddComponent,
     ListpatientsComponent,
-    EditComponent
+    EditComponent,
+    DetailsComponent
   ],
     imports: [
         BrowserModule, CommonModule, ReactiveFormsModule, DataTablesModule, FormsModule, RouterModule
