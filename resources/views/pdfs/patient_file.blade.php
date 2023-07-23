@@ -179,7 +179,7 @@
 
 
         <tr style="    background-color: #ffffff;">
-            <td style="      font-weight: bold;  background-color: #d8d8d8;" colspan="2"  align="left">الإجمالي</td>
+            <td style="      font-weight: bold;  background-color: #d8d8d8;" colspan="2"  align="left">Total</td>
             <td style="      font-weight: bold;  background-color: #d8d8d8;" align="left" class="gray">{{ $total}} DH </td>
         </tr>
 

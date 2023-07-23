@@ -104,6 +104,9 @@ export class ApiServiceService {
     return this.http.put<any>(this.apiUrl+'analyses/'+id,   {patient , anlayses }  , { headers });
   }
 
-
+  getStatistiques(){
+    const headers = this.createAuthorizationHeader();
+    return this.http.get<any>(this.apiUrl+'statistiques', { headers });
+  }
 
 }

@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.css">
 
     <style>
         /* Define the rotation animation */
@@ -42,8 +43,80 @@
   <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="/assets/dist/js/adminlte.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js">
+
+ </script>
+<script>
 
 
+    function showStats(months , valus)
+    {
+        console.log(months)
+        console.log(valus)
+        var options = {
+            series: [{
+                name: 'Servings',
+                data: valus,
+            }],
+            annotations: {
+
+            },
+            chart: {
+                height: 350,
+                type: 'bar',
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 10,
+                    columnWidth: '50%',
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                width: 2
+            },
+
+            grid: {
+                row: {
+                    colors: ['#fff', '#f2f2f2']
+                }
+            },
+            xaxis: {
+                labels: {
+                    rotate: -45
+                },
+                categories: months,
+                tickPlacement: 'on'
+            },
+            yaxis: {
+                title: {
+                    text: 'Revenus',
+                },
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shade: 'light',
+                    type: "horizontal",
+                    shadeIntensity: 0.25,
+                    gradientToColors: undefined,
+                    inverseColors: true,
+                    opacityFrom: 0.85,
+                    opacityTo: 0.85,
+                    stops: [50, 0, 100]
+                },
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+
+    }
+
+
+</script>
 
 </body>
 </html>

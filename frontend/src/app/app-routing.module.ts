@@ -28,7 +28,7 @@ const routes: Routes = [
     path: '',
     component: BlankComponent,
     children: [
-        { path: 'profile', component: UserProfileComponent  },
+        { path: 'dashboard', component: UserProfileComponent  },
         { path: 'patient/add', component: AddComponent },
         { path: 'patient', component: ListpatientsComponent },
         { path: 'patient/:id', component: EditComponent },

@@ -21,6 +21,9 @@ Route::group([
 Route::group(['middleware' => ['auth_jwt', 'api']], function () {
     Route::resource('patients', PatientController::class);
     Route::get('patients/cin/{id}', "PatientController@getPatienByCin");
+
+    Route::get('statistiques', "StatistiquesController@index");
+
     Route::resource('users', UserController::class);
     Route::resource('analyses', AnalysesController::class);
 });
