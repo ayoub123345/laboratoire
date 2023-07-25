@@ -7,11 +7,10 @@
     </div>
     <div class="card-body">
 
-
         <form>
             <div class="card-body">
-                <a style="margin-bottom: 15px"   [routerLink]="'/patient'"   >Return to the list
-                </a> <div style="height: 10px"></div>
+                <a style="margin-bottom: 15px"   [routerLink]="'/patient'">Retour à la liste </a>
+                <div style="height: 10px"></div>
                 <div class="form-group">
                     <label>CIN</label>
                     <input type="text" class="form-control" name="cin" placeholder="Enter CIN" [(ngModel)]="patient.cin" [ngClass]="{ 'is-invalid': errors?.cin }">
@@ -34,7 +33,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Date naissance</label>
+                    <label>Date Naissance</label>
                     <input  type="date" class="form-control" name="birth_date" placeholder="Entre la date de patient"   [(ngModel)]="patient.birth_date" [ngClass]="{ 'is-invalid': errors?.birth_date }">
                     <span  *ngIf="errors?.birth_date" class="error invalid-feedback">{{ errors.birth_date[0] }}</span>
 

@@ -10,11 +10,11 @@
 
         <form>
             <div class="card-body">
-                <a style="margin-bottom: 15px"   [routerLink]="'/analyses'"   >Return to the list
-                </a> <div style="height: 10px"></div>
+                <a style="margin-bottom: 15px"   [routerLink]="'/analyses'">Retour à la liste</a>
+                <div style="height: 10px"></div>
 
                 <div>
-                    <h6> * Patient info</h6>
+                    <h6> Les informations de Patient</h6>
                 </div>
                 <div class="row">
 
@@ -59,23 +59,23 @@
 
                     </div>
 
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label>Adresse</label>
-                            <input type="text" class="form-control" rows="3" name="adresse" placeholder="Enter ..." [(ngModel)]="patient.adresse" [ngClass]="{ 'is-invalid': errors?.adresse }"/>
-                            <span  *ngIf="errors?.adresse" class="error invalid-feedback">{{ errors.adresse[0] }}</span>
 
-                        </div>
-
-                    </div>
 
                     <div class="col-4">
 
                         <div class="form-group">
                             <label>Téléphone</label>
-                            <input type="text" class="form-control" name="phone" placeholder="Phone" [(ngModel)]="patient.phone" [ngClass]="{ 'is-invalid': errors?.phone }">
+                            <input type="text" class="form-control" name="phone" placeholder="Téléphone" [(ngModel)]="patient.phone" [ngClass]="{ 'is-invalid': errors?.phone }">
                             <span  *ngIf="errors?.phone" class="error invalid-feedback">{{ errors.phone[0] }}</span>
 
+                        </div>
+
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>Adresse</label>
+                            <textarea class="form-control" rows="3" name="adresse" placeholder="Enter Adresse..." [(ngModel)]="patient.adresse" [ngClass]="{ 'is-invalid': errors?.adresse }"></textarea>
+                            <span  *ngIf="errors?.adresse" class="error invalid-feedback">{{ errors.adresse[0] }}</span>
                         </div>
 
                     </div>
@@ -129,12 +129,12 @@
                                 <div>
                                     <div style="display: inline; margin: 4px;" class="form-check">
                                         <input type="radio" name="status"   class="form-check-input"   [(ngModel)]="analyse.status" value="PENDING">
-                                        <label class="form-check-label"   for="male">Pending</label>
+                                        <label class="form-check-label"   for="male">En cours</label>
                                     </div>
 
                                     <div style="display: inline; margin: 4px;" class="form-check">
                                         <input type="radio" name="status" class="form-check-input"   [(ngModel)]="analyse.status" value="READY">
-                                        <label class="form-check-label" for="female">Ready</label>
+                                        <label class="form-check-label" for="female">Prête</label>
                                     </div>
                                 </div>
 

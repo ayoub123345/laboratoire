@@ -10,25 +10,26 @@
 
         <form>
             <div class="card-body">
-                <a style="margin-bottom: 15px"   [routerLink]="'/employees'"   >Return to the list
-                </a> <div style="height: 10px"></div>
+                <a style="margin-bottom: 15px"   [routerLink]="'/employees'">Retour à la liste</a> <div style="height: 10px">
+
+            </div>
 
                 <div class="form-group">
-                    <label>name</label>
-                    <input type="text" class="form-control" name="name" placeholder="Enter le name de employee" [(ngModel)]="emp.name" [ngClass]="{ 'is-invalid': errors?.name }">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter le name de l'employee" [(ngModel)]="emp.name" [ngClass]="{ 'is-invalid': errors?.name }">
                     <span  *ngIf="errors?.name" class="error invalid-feedback">{{ errors.name[0] }}</span>
 
                 </div>
 
                 <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Enter le famille de patient" [(ngModel)]="emp.email" [ngClass]="{ 'is-invalid': errors?.email }">
+                    <label>E-mail</label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter E-mail de l'employee" [(ngModel)]="emp.email" [ngClass]="{ 'is-invalid': errors?.email }">
                     <span  *ngIf="errors?.email" class="error invalid-feedback">{{ errors.email[0] }}</span>
 
                 </div>
 
                 <div class="form-group">
-                    <label>Date naissance</label>
+                    <label>Date Naissance</label>
                     <input type="date" class="form-control" name="birth_date" placeholder="Entre la date de patient" [(ngModel)]="emp.birth_date" [ngClass]="{ 'is-invalid': errors?.birth_date }">
                     <span  *ngIf="errors?.birth_date" class="error invalid-feedback">{{ errors.birth_date[0] }}</span>
 
@@ -38,20 +39,20 @@
 
                 <div class="form-group">
                     <label>Téléphone</label>
-                    <input type="text" class="form-control" name="phone" placeholder="Phone" [(ngModel)]="emp.phone" [ngClass]="{ 'is-invalid': errors?.phone }">
+                    <input type="text" class="form-control" name="phone" placeholder="Téléphone" [(ngModel)]="emp.phone" [ngClass]="{ 'is-invalid': errors?.phone }">
                     <span  *ngIf="errors?.phone" class="error invalid-feedback">{{ errors.phone[0] }}</span>
 
                 </div>
                 <div class="form-group">
-                    <label>password </label>
-                    <input type="password" class="form-control" name="password " placeholder="password " [(ngModel)]="emp.password " [ngClass]="{ 'is-invalid': errors?.password  }">
+                    <label>Mot de passe </label>
+                    <input type="password" class="form-control" name="password " placeholder="Entre un mot de passe " [(ngModel)]="emp.password " [ngClass]="{ 'is-invalid': errors?.password  }">
                     <span  *ngIf="errors?.password " class="error invalid-feedback">{{ errors.password[0] }}</span>
 
                 </div>
 
              <div class="form-group">
-                    <label>password_confirmation </label>
-                    <input type="password" class="form-control" name="password_confirmation " placeholder="password_confirmation " [(ngModel)]="emp.password_confirmation " [ngClass]="{ 'is-invalid': errors?.password_confirmation  }">
+                    <label>Confirmer le mot de passe</label>
+                    <input type="password" class="form-control" name="password_confirmation " placeholder="Confirmer le mot de passe" [(ngModel)]="emp.password_confirmation " [ngClass]="{ 'is-invalid': errors?.password_confirmation  }">
                     <span  *ngIf="errors?.password_confirmation " class="error invalid-feedback">{{ errors.password_confirmation[0] }}</span>
 
               </div>
