@@ -33,10 +33,14 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="user-panel mt-3 pb-3 mb-3  ">
 
-                    <div class="info">
-                        <a  class="d-block">{{UserProfile?.name}}</a>
+                    <div style="display: block;background: #535353ad;text-align: center;padding: 10px;">
+                        <img style="width:100px" src="../../../assets/lab.png" alt="">
+                    </div>
+                    <div style="height: 15px"></div>
+                    <div class=" ">
+                        <a  class="d-block">Employee : {{UserProfile?.name}}</a>
                     </div>
                 </div>
 
@@ -105,13 +109,13 @@
                                 <li class="nav-item">
                                     <a  [routerLink]="'/employees/add'"  class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Add employee</p>
+                                        <p>Ajouter un employee</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a   [routerLink]="'/employees'"  class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>List employee</p>
+                                        <p>List des employees</p>
                                     </a>
                                 </li>
                             </ul>

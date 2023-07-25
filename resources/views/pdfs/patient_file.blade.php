@@ -83,13 +83,10 @@
 <div class=" ">
     <table width="100%" style="padding: 10px" class="">
         <tr >
-            <td>
-{{--                 <img style="width: 100px" src="{{asset('logo.png')}}" alt="">--}}
-             </td>
+
             <td class="" align="left" style="width: 40%;">
                 <p>{{$lab->name}}</p>
                 <p>
-                    work Number : {{@$lab->taxes_number??'----'}}<br>
 
                     {{@$lab->address}}<br />
                 </p>
@@ -97,11 +94,12 @@
 
             </td>
 
+            <td></td>
             <td style="text-align: left">
                  <p  style="margin: 0px;padding: 0px">
 
 
-                    Date  prining : {{\Carbon\Carbon::parse()->format('d/m/Y h:m:i')}}<br>
+                     Date d'impression : {{\Carbon\Carbon::parse()->format('d/m/Y h:m:i')}}<br>
                      Phone {{$lab->phone}}
 
 
@@ -121,7 +119,7 @@
 
 
             <td  class="" align="left" style="width: 50%;">
-                <p>Name: {{@$emp->lastname}} {{@$emp->firstname}}</p>
+                <p>Patient: {{@$emp->lastname}} {{@$emp->firstname}}</p>
                 <p>
 
                     Adress :{{@$emp->adresse}}<br />
@@ -146,9 +144,9 @@
     <table width="100%">
         <thead>
         <tr>
-            <th style="text-align: left">name</th>
-            <th  style="text-align: left">date</th>
-            <th  style="text-align: left">price</th>
+            <th style="text-align: left">Nom</th>
+            <th  style="text-align: left">Date</th>
+            <th  style="text-align: left">Prix</th>
 
         </tr>
         </thead>
